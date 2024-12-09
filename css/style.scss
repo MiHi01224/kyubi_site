@@ -1,0 +1,113 @@
+@charset "utf-8";
+
+$color-main: #C2678B;
+$color-text: #5E3449;
+$color-accent: #ffaece;
+
+$breakpoints: (
+    "desktop": "screen and (min-width: 768px)",
+    ) !default;
+
+@mixin m-query($breakpoint: "desktop") {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+@mixin m-inner($w: (340/390)*100%, $mw: 1000px) {
+    width: $w;
+    max-width: $mw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin m-flex($a: center, $j: space-between) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $j;
+    align-items: $a;
+}
+
+@function f-rem($value) {
+    @return ($value/16)+rem;
+}
+
+
+/* base */
+body {
+    color: $color-text;
+    font-size: f-rem(16);
+    font-family: "Noto Sans",sans-serif,"ヒラギノ丸ゴ ProN",
+        "Hiragino Maru Gothic ProN";
+    line-height: (27/16);
+    letter-spacing: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+/* header
+----------------------------------*/
+.header{
+    position: fixed;
+    z-index: 999;
+    top:0;
+    left:0;
+    width:100%;
+    padding:(10em/16) 0;
+    background-color: rgba(255,255,255,0.5);
+
+    &__inner{
+        @include m-inner();
+        @include m-flex();
+    }
+
+    &__logo{
+        width:100px;
+
+        @include m-query(){
+            width:140px;
+        }
+    }
+}
+
+.nav{
+    &__menu {
+        width: f-rem(38);
+        cursor: pointer;
+
+        @include m-query(){
+            width: f-rem(44);
+        }
+    }
+
+    &__stop {
+        cursor: pointer;
+    }
+
+    &--mobile{
+        display: none;
+        @include m-query(){
+            display: block;
+        }
+    }
+
+    &__list {
+        @include m-flex();
+    }
+
+    &__item {
+        font-family:"Kaisei Decol","ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
+        margin-left: (16em/16);
+    }
+}
+
+/* footer */
+
+
+/* index
+----------------------------------*/
+/* top */
