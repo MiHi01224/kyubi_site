@@ -23,6 +23,7 @@ img {
   left: 0;
   width: 100%;
   padding: 0.625em 0;
+  border-bottom: #5E3449 solid 1px;
   background-color: rgba(255, 255, 255, 0.5);
 }
 .header__inner {
@@ -36,11 +37,11 @@ img {
   align-items: center;
 }
 .header__logo {
-  width: 100px;
+  width: 85px;
 }
 @media screen and (min-width: 768px) {
   .header__logo {
-    width: 140px;
+    width: 120px;
   }
 }
 
@@ -79,29 +80,22 @@ img {
 /* index
 ----------------------------------*/
 /* top */
-.top {
-  background-color: #5E3449;
-}
 .top__inner {
   width: 87.1794871795%;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
 }
-.top .content {
+.top__slider {
   position: relative;
-  margin: 0;
+  margin: 0 calc(50% - 50vw);
   padding: 0;
-  width: 100%;
+  width: 100vw;
   height: 700px;
 }
 @media screen and (min-width: 768px) {
-  .top .content {
-    margin-left: auto;
-    margin-right: auto;
-    padding: 400px 0;
-    width: 78.125%;
-    height: 100%;
+  .top__slider {
+    height: 827px;
   }
 }
 .top__slideing {
@@ -112,6 +106,7 @@ img {
   left: 0;
   opacity: 0;
   background-size: cover;
+  filter: blur(6px) saturate(70%);
   -webkit-animation: slide 12s infinite;
           animation: slide 12s infinite;
 }
@@ -147,6 +142,69 @@ img {
           animation-delay: 6s;
 }
 .top__slideing:nth-child(4) {
+  background-image: url(../image/illustration/pic_top4.png);
+  -webkit-animation-delay: 9s;
+          animation-delay: 9s;
+}
+
+.content__slider {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  width: 100%;
+  height: 700px;
+}
+@media screen and (min-width: 414px) {
+  .content__slider {
+    width: 88.5416666667%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .content__slider {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 400px 0;
+    width: 58.59375%;
+    height: 100%;
+  }
+}
+.content__slideing {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background: top center/cover;
+  -webkit-animation: slide 12s infinite;
+          animation: slide 12s infinite;
+}
+@keyframes slide {
+  0%, 40%, 100% {
+    opacity: 0;
+  }
+  15%, 25% {
+    opacity: 1;
+  }
+}
+.content__slideing:nth-child(1) {
+  background-image: url(../image/illustration/pic_top1.png);
+  background-position: top left -250px;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.content__slideing:nth-child(2) {
+  background-image: url(../image/illustration/pic_top2.png);
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+.content__slideing:nth-child(3) {
+  background-image: url(../image/illustration/pic_top3.png);
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+.content__slideing:nth-child(4) {
   background-image: url(../image/illustration/pic_top4.png);
   -webkit-animation-delay: 9s;
           animation-delay: 9s;
