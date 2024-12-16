@@ -5,7 +5,7 @@ $color-text: #5E3449;
 $color-accent: #ffaece;
 
 $breakpoints: (
-    "desktop": "screen and (min-width: 768px)",
+    "desktop": "screen and (min-width: 769px)",
     "tablet": "screen and (min-width: 414px)",
     ) !default;
 
@@ -60,42 +60,29 @@ img {
     width:100%;
     padding:(10em/16) 0;
     border-bottom: #5E3449 solid 1px;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.7);
 
     &__inner{
         @include m-inner();
         @include m-flex();
+
     }
 
     &__logo{
-        width:85px;
+        width:f-rem(85);
 
         @include m-query(){
-            width:120px;
+            width:f-rem(120);
         }
     }
 }
 
 .nav{
-    &__menu {
-        width: f-rem(38);
-        cursor: pointer;
-
-        @include m-query(){
-            width: f-rem(44);
-        }
+    display: none;
+    @include m-query() {
+        display: block;
     }
 
-    &__stop {
-        cursor: pointer;
-    }
-
-    &--mobile{
-        display: none;
-        @include m-query(){
-            display: block;
-        }
-    }
 
     &__list {
         @include m-flex();
@@ -105,13 +92,107 @@ img {
         font-family:"Kaisei Decol","ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
         margin-left: (16em/16);
     }
+
+    // &--active {
+
+    // }
+
+    &__stop {
+        cursor: pointer;
+    }
+}
+
+.menu {
+    cursor: pointer;
+
+    &__pic{
+        width: f-rem(38);
+
+        @include m-query() {
+            width: f-rem(44);
+        }
+    }
+
+    &__text{
+        text-align: center;
+        font-family:"Major Mono Display",serif;
+        font-size: f-rem(12);
+
+        @include m-query() {
+                font-size: f-rem(14);
+            }
+    }
 }
 
 /* footer */
 
 
+/* btn */
+.btn{
+    display: inline-block;
+    width: fit-content;
+    margin-top: (60em/16);
+    margin-left: auto;
+    padding: (15em/16) (20em/16);
+    border:2px solid $color-main;
+    border-radius: 100vh;
+    @include m-flex(center,flex-start);
+
+    &__text{
+        margin-right: (7em/16);
+        line-height: 1;
+    }
+
+    &__pic{
+        width: f-rem(30);
+        transition: all 0.3s;
+    }
+
+    &__em{
+        margin-right: (2em/16);
+        font-weight: bold;
+        color:$color-main;
+    }
+
+    &--contact{
+        position: relative;
+        margin-right: auto;
+        border: 2px solid $color-text;
+        border-bottom: 7px solid $color-text;
+        background-color: $color-main;
+        color: #fff;
+        transition: all 0.2s;
+
+        &::before{
+            content: "＼ お気軽にご相談くださいませ！ ／";
+            position: absolute;
+            top: -(30em/14);
+            left: (10em/14);
+            color:$color-text;
+            font-size: 14px;
+        }
+
+        &:hover{
+            margin-top: (64em/16);
+            border-bottom: 3px solid #2b2b2b;
+
+            .btn__pic{
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
 /* index
 ----------------------------------*/
+//   ####    ##   ##  #####    #######  ##  ##
+//    ##     ###  ##   ## ##    ##   #  ##  ##
+//    ##     #### ##   ##  ##   ## #     ####
+//    ##     ## ####   ##  ##   ####      ##
+//    ##     ##  ###   ##  ##   ## #     ####
+//    ##     ##   ##   ## ##    ##   #  ##  ##
+//   ####    ##   ##  #####    #######  ##  ##
+
 /* top */
 
 .top{
@@ -173,7 +254,6 @@ img {
         }
 }
 
-
 .content{
     &__slider{
         position: relative;
@@ -187,7 +267,7 @@ img {
             width: (680/768)*100%;
         }
 
-        @include m-query(){
+        @include m-query(desktop){
             margin-left: auto;
             margin-right: auto;
             padding: 400px 0;
@@ -235,4 +315,45 @@ img {
         animation-delay: 9s;
     }
 
+}
+
+/* work */
+.work{
+    &__inner{
+        @include m-inner();
+    }
+
+    &__list{
+        @include m-flex(center center);
+    }
+
+    &__item{
+        width: (593/1236)*100%;
+
+
+        @include m-query(tablet){
+            width: (387/1236)*100%;
+        }
+
+        @include m-query(desktop) {
+            width: (290/1236)*100%;
+        }
+    }
+}
+
+/* profile */
+.profile{
+    span{
+        display: inline-block;
+    }
+}
+
+/* content */
+.content{
+
+    &__text{
+        span{
+            display: inline-block;
+        }
+    }
 }

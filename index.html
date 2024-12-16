@@ -19,22 +19,19 @@
 <header id="top" class="header">
     <div class="header__inner">
         <h1 class="header__logo"><a href="#top"><img src="./image/logo.svg" alt="プライマリ"></a></h1>
-        <nav class="header__nav nav nav--mobile">
+        <nav class="header__nav nav" id="js-nav">
             <ul class="nav__list">
                 <li class="nav__item"><a href="#">プロフィール</a></li>
                 <li class="nav__item"><a href="#">制作実績</a></li>
                 <li class="nav__item"><a href="#">ご依頼について</a></li>
                 <li class="nav__item"><a href="#">お問い合わせ</a></li>
+                <li class="nav__item nav__stop" id="js-stop">▶︎</li>
             </ul>
         </nav>
-        <nav class="header__nav nav">
-            <ul class="nav__list">
-                <li class="nav__item nav__stop" id="stop">▶︎</li>
-                <li class="nav__item">
-                    <img class="nav__menu" src="./image/menu.svg" alt="メニュー">
-                </li>
-            </ul>
-        </nav>
+        <div class="header__menu menu" id="js-menu">
+            <img class="menu__pic" src="./image/btn_main.svg" alt="メニュー">
+            <p class="menu__text">menu</p>
+        </div>
     </div>
 </header>
 <main class="main">
@@ -59,10 +56,133 @@
         </div>
     </section>
 
+    <section class="work">
+        <div class="work__inner">
+            <h2 class="work__title">制作実績</h2>
+            <div class="work__list">
+                <div class="work__item card">
+                    <img class="card__pic" src="./image/mask.png" alt="" >
+                    <p class="work__title">タイトル</p>
+                    <p class="card__text">タグタグタグ</p>
+                </div>
+                <div class="work__item card">
+                    <img class="card__pic" src="./image/mask.png" alt="">
+                    <p class="work__title">タイトル</p>
+                    <p class="card__text">タグタグタグ</p>
+                </div>
+                <div class="work__item card">
+                    <img class="card__pic" src="./image/mask.png" alt="">
+                    <p class="work__title">タイトル</p>
+                    <p class="card__text">タグタグタグ</p>
+                </div>
+                <div class="work__item card">
+                    <img class="card__pic" src="./image/mask.png" alt="">
+                    <p class="work__title">タイトル</p>
+                    <p class="card__text">タグタグタグ</p>
+                </div>
+                <div class="work__item card">
+                    <img class="card__pic" src="./image/mask.png" alt="">
+                    <p class="work__title">タイトル</p>
+                    <p class="card__text">タグタグタグ</p>
+                </div>
+                <div class="work__item card">
+                    <img class="card__pic" src="./image/mask.png" alt="">
+                    <p class="work__title">タイトル</p>
+                    <p class="card__text">タグタグタグ</p>
+                </div>
+                <div class="work__item card">
+                    <img class="card__pic" src="./image/mask.png" alt="">
+                    <p class="work__title">タイトル</p>
+                    <p class="card__text">タグタグタグ</p>
+                </div>
+                <div class="work__item card">
+                    <img class="card__pic" src="./image/mask.png" alt="">
+                    <p class="work__title">タイトル</p>
+                    <p class="card__text">タグタグタグ</p>
+                </div>
+                <div class="work__item card">
+                    <img class="card__pic" src="./image/mask.png" alt="">
+                    <p class="work__title">タイトル</p>
+                    <p class="card__text">タグタグタグ</p>
+                </div>
+                <div class="work__item card">
+                    <img class="card__pic" src="./image/mask.png" alt="">
+                    <p class="work__title">タイトル</p>
+                    <p class="card__text">タグタグタグ</p>
+                </div>
+                <div class="work__item card">
+                    <img class="card__pic" src="./image/mask.png" alt="">
+                    <p class="work__title">タイトル</p>
+                    <p class="card__text">タグタグタグ</p>
+                </div>
+                <div class="work__item card">
+                    <img class="card__pic" src="./image/mask.png" alt="">
+                    <p class="work__title">タイトル</p>
+                    <p class="card__text">タグタグタグ</p>
+                </div>
+            </div>
+            <a class="btn" href="#">
+                <p class="btn__text"><em class="btn__em">制作実績</em>を詳しく見る</p>
+                <img class="btn__pic" src="./image/btn_main.svg" alt="">
+            </a>
+        </div>
+    </section>
+
+    <section class="profile">
+        <div class="profile__inner">
+            <h2 class="profile__title">プロフィール</h2>
+            <img class="profile__pic" src="./image/illustration/pic_top2.png" alt="">
+            <div class="profile__content unit">
+                <h3 class="unit__title">九尾みか</h3>
+                <p class="unit__text">
+                    <span>可愛い女の子を描くのが好きです。繊細でキラキラしたイラストが得意です。</span>
+                    <span>いつかオリジナルのイラスト本が出せたらいいなと思っております。</span>
+                </p>
+                <a class="btn" href="#">
+                    <p class="btn__text"><em class="btn__em">プロフィール</em>を詳しく見る</p>
+                    <img class="btn__pic" src="./image/btn_main.svg" alt="">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="contact__inner">
+            <h2 class="contact__title">コンタクト</h2>
+            <p class="contact__lead">制作のご依頼はこちらからお問合せください。</p>
+            <a class="btn btn--contact" href="#">
+                <p class="btn__text">ご依頼・ご相談はこちら</p>
+                <img class="btn__pic" src="./image/btn_white.svg" alt="">
+            </a>
+            <p class="contact__text">
+                <span>SNS等のアイコン・</span>
+                <span>動画配信のサムネイルやブランケットなどのグッズ用の一枚絵・</span>
+                <span>VtuberやVライバーの立ち絵やLive2d用パーツ分けイラスト、歌ってみたのイラスト・</span>
+                <span>SDキャラ等様々なイラストを製作・納品しております。</span>
+            </p>
+            <a class="btn" href="#">
+                <p class="btn__text"><em class="btn__em">ご依頼について</em>詳しく見る</p>
+                <img class="btn__pic" src="./image/btn_main.svg" alt="">
+            </a>
+        </div>
+    </section>
+
 </main>
 <footer class="footer">
-
+    <div class="footer__inner">
+        <nav class="footer__nav nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#">プロフィール</a></li>
+                <li class="nav__item"><a href="#">制作実績</a></li>
+                <li class="nav__item"><a href="#">ご依頼について</a></li>
+                <li class="nav__item"><a href="#">お問い合わせ</a></li>
+                <li class="nav__item nav__stop" id="js-stop">▶︎</li>
+            </ul>
+        </nav>
+        <small class="footer__copy">&copy;2020-2024 kyubi mika</small>
+    </div>
 </footer>
 
+<script src="./base.js" async></script>
 </body>
 </html>

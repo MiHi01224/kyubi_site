@@ -24,7 +24,7 @@ img {
   width: 100%;
   padding: 0.625em 0;
   border-bottom: #5E3449 solid 1px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 .header__inner {
   width: 87.1794871795%;
@@ -37,31 +37,19 @@ img {
   align-items: center;
 }
 .header__logo {
-  width: 85px;
+  width: 5.3125rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .header__logo {
-    width: 120px;
+    width: 7.5rem;
   }
 }
 
-.nav__menu {
-  width: 2.375rem;
-  cursor: pointer;
-}
-@media screen and (min-width: 768px) {
-  .nav__menu {
-    width: 2.75rem;
-  }
-}
-.nav__stop {
-  cursor: pointer;
-}
-.nav--mobile {
+.nav {
   display: none;
 }
-@media screen and (min-width: 768px) {
-  .nav--mobile {
+@media screen and (min-width: 769px) {
+  .nav {
     display: block;
   }
 }
@@ -75,8 +63,87 @@ img {
   font-family: "Kaisei Decol", "ヒラギノ丸ゴ ProN", "Hiragino Maru Gothic ProN";
   margin-left: 1em;
 }
+.nav__stop {
+  cursor: pointer;
+}
+
+.menu {
+  cursor: pointer;
+}
+.menu__pic {
+  width: 2.375rem;
+}
+@media screen and (min-width: 769px) {
+  .menu__pic {
+    width: 2.75rem;
+  }
+}
+.menu__text {
+  text-align: center;
+  font-family: "Major Mono Display", serif;
+  font-size: 0.75rem;
+}
+@media screen and (min-width: 769px) {
+  .menu__text {
+    font-size: 0.875rem;
+  }
+}
 
 /* footer */
+/* btn */
+.btn {
+  display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 3.75em;
+  margin-left: auto;
+  padding: 0.9375em 1.25em;
+  border: 2px solid #C2678B;
+  border-radius: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.btn__text {
+  margin-right: 0.4375em;
+  line-height: 1;
+}
+.btn__pic {
+  width: 1.875rem;
+  transition: all 0.3s;
+}
+.btn__em {
+  margin-right: 0.125em;
+  font-weight: bold;
+  color: #C2678B;
+}
+.btn--contact {
+  position: relative;
+  margin-right: auto;
+  border: 2px solid #5E3449;
+  border-bottom: 7px solid #5E3449;
+  background-color: #C2678B;
+  color: #fff;
+  transition: all 0.2s;
+}
+.btn--contact::before {
+  content: "＼ お気軽にご相談くださいませ！ ／";
+  position: absolute;
+  top: -2.1428571429em;
+  left: 0.7142857143em;
+  color: #5E3449;
+  font-size: 14px;
+}
+.btn--contact:hover {
+  margin-top: 4em;
+  border-bottom: 3px solid #2b2b2b;
+}
+.btn--contact:hover .btn__pic {
+  transform: rotate(180deg);
+}
+
 /* index
 ----------------------------------*/
 /* top */
@@ -93,7 +160,7 @@ img {
   width: 100vw;
   height: 700px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .top__slider {
     height: 827px;
   }
@@ -160,7 +227,7 @@ img {
     width: 88.5416666667%;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .content__slider {
     margin-left: auto;
     margin-right: auto;
@@ -208,5 +275,42 @@ img {
   background-image: url(../image/illustration/pic_top4.png);
   -webkit-animation-delay: 9s;
           animation-delay: 9s;
+}
+
+/* work */
+.work__inner {
+  width: 87.1794871795%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.work__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center center;
+}
+.work__item {
+  width: 47.9773462783%;
+}
+@media screen and (min-width: 414px) {
+  .work__item {
+    width: 31.3106796117%;
+  }
+}
+@media screen and (min-width: 769px) {
+  .work__item {
+    width: 23.4627831715%;
+  }
+}
+
+/* profile */
+.profile span {
+  display: inline-block;
+}
+
+/* content */
+.content__text span {
+  display: inline-block;
 }
 /*# sourceMappingURL=style.css.map */
