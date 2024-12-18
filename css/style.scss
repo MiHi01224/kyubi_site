@@ -39,7 +39,6 @@ $breakpoints: (
 }
 
 
-
 /* base
 ----------------------------------*/
 //  ######     ##       ####   #######
@@ -61,6 +60,10 @@ body {
         "Hiragino Maru Gothic ProN";
     line-height: (27/16);
     letter-spacing: 0;
+
+    ::selection {
+            background-color: $color-accent;
+        }
 }
 
 img {
@@ -262,6 +265,7 @@ img {
 /* top */
 
 .top{
+    margin-bottom: 100px;
 
     &__inner{
         @include m-inner();
@@ -274,7 +278,7 @@ img {
             height: 695px;
 
             @include m-query(){
-                height: 827px;
+                height: 795px;
             }
         }
 
@@ -341,7 +345,6 @@ img {
             height: 100%;
         }
 
-
     }
 
     &__slideing{
@@ -381,6 +384,69 @@ img {
         animation-delay: 9s;
     }
 
+    &__title{
+        position: absolute;
+        width: 100%;
+        left:0;
+        bottom:-3%;
+        @include m-flex(center,flex-start);
+
+        &__name{
+            width: 70%;
+            max-width: 500px;
+            padding: 0 10px;
+        }
+
+        &__site{
+            margin-left: 20%;
+            width: 60%;
+            padding: 0 15px;
+        }
+
+        @include m-query(tablet){
+            left: -6%;
+            bottom: -5%;
+        }
+
+
+    }
+}
+
+/* handwriting */
+#textName {
+    mask: url(#maskName);
+}
+
+#textSite {
+    mask: url(#maskSite);
+}
+
+@keyframes handwriting {
+    0% {
+        stroke-dashoffset: 2500px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.handwriting {
+    &__text {
+        fill: $color-text;
+    }
+
+    &__mask {
+        &__line {
+            fill: none;
+            stroke: #fff;
+            stroke-width: 7;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 2500px;
+            animation: handwriting 5s linear infinite;
+        }
+    }
 }
 
 /* work */
@@ -439,7 +505,6 @@ img {
         }
     }
 
-
     span{
         display: inline-block;
     }
@@ -463,6 +528,16 @@ img {
 }
 
 /* about */
+@keyframes scroll-right {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
 .about{
     &__inner{
         @include m-inner();
@@ -475,26 +550,26 @@ img {
     /* スクロールアニメーション */
     &__scroll{
         overflow: hidden;
+        display: flex;
     }
 
     &__list{
-        animation: scroll-right 20s linear infinite;
         display: flex;
-        width: max-content;
+        animation: scroll-right 30s linear infinite;
     }
 
     &__item{
         padding: 0 2px;
-        width: calc(100vw / 3 - 10px);
-    }
-}
-@keyframes scroll-right {
-    from {
-        transform: translateX(0%);
+        width: calc(100vw/3);
     }
 
-    to {
-        transform: translateX(-50%);
+    &__pic{
+        width: 100%;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+
+        @include m-query(){
+        }
     }
 }
 
