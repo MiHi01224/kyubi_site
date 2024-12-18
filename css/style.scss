@@ -2,7 +2,7 @@
 
 $color-main: #C2678B;
 $color-text: #5E3449;
-$color-accent: #ffaece;
+$color-accent: #E8BACC;
 
 $breakpoints: (
     "desktop": "screen and (min-width: 769px)",
@@ -29,13 +29,32 @@ $breakpoints: (
     align-items: $a;
 }
 
+@mixin m-h2(){
+    width:(491/1236)*100%;
+    min-width: 200px
+}
+
 @function f-rem($value) {
     @return ($value/16)+rem;
 }
 
 
-/* base */
+
+/* base
+----------------------------------*/
+//  ######     ##       ####   #######
+//   ##  ##   ####     ##  ##   ##   #
+//   ##  ##  ##  ##   ##        ## #
+//   #####   ##  ##   ##        ####
+//   ##  ##  ######   ##        ## #
+//   ##  ##  ##  ##    ##  ##   ##   #
+//  ######   ##  ##     ####   #######
+
+
+
+
 body {
+    min-width: 280px;
     color: $color-text;
     font-size: f-rem(16);
     font-family: "Noto Sans",sans-serif,"ヒラギノ丸ゴ ProN",
@@ -93,10 +112,6 @@ img {
         margin-left: (16em/16);
     }
 
-    // &--active {
-
-    // }
-
     &__stop {
         cursor: pointer;
     }
@@ -106,6 +121,7 @@ img {
     cursor: pointer;
 
     &__pic{
+        fill:$color-main;
         width: f-rem(38);
 
         @include m-query() {
@@ -125,6 +141,17 @@ img {
 }
 
 /* footer */
+.footer{
+    &__inner{
+        @include m-inner();
+        @include m-flex();
+    }
+
+    &__copy{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
 
 
 /* btn */
@@ -137,8 +164,10 @@ img {
     border:2px solid $color-main;
     border-radius: 100vh;
     @include m-flex(center,flex-start);
+    transition: all 0.2s;
 
     &__text{
+        font-size: 14px;
         margin-right: (7em/16);
         line-height: 1;
     }
@@ -146,12 +175,22 @@ img {
     &__pic{
         width: f-rem(30);
         transition: all 0.3s;
+
+        &--color{
+            fill: $color-main;
+        }
     }
 
     &__em{
         margin-right: (2em/16);
         font-weight: bold;
         color:$color-main;
+    }
+
+    &:hover {
+        .btn__pic{
+            transform: rotate(180deg);
+        }
     }
 
     &--contact{
@@ -161,15 +200,16 @@ img {
         border-bottom: 7px solid $color-text;
         background-color: $color-main;
         color: #fff;
+        fill:#fff;
         transition: all 0.2s;
 
         &::before{
-            content: "＼ お気軽にご相談くださいませ！ ／";
+            content: "＼ お気軽にご相談くださいませ！／";
             position: absolute;
             top: -(30em/14);
-            left: (10em/14);
+            left: (17em/14);
             color:$color-text;
-            font-size: 14px;
+            font-size: 12px;
         }
 
         &:hover{
@@ -180,6 +220,32 @@ img {
                 transform: rotate(180deg);
             }
         }
+    }
+}
+
+.sns{
+    @include m-flex(center,flex-end);
+    margin-top: 30px;
+
+    &__item{
+        margin-left: 5px;
+        width:30px;
+        transition: 0.2s;
+
+        @include m-query(tablet){
+            width: 40px;
+        }
+
+        &:hover{
+            transform: translateY(-3px);
+        }
+    }
+
+    &__pic {
+        border-radius: 5px;
+    }
+    @include m-query(desktop) {
+        border-radius: 10px;
     }
 }
 
@@ -205,7 +271,7 @@ img {
             margin: 0 calc(50% - 50vw);
             padding: 0;
             width: 100vw;
-            height: 700px;
+            height: 695px;
 
             @include m-query(){
                 height: 827px;
@@ -220,7 +286,7 @@ img {
             left: 0;
             opacity: 0;
             background-size: cover;
-            filter:blur(6px) saturate(70%);
+            filter:blur(5px) saturate(70%);
             animation: slide 12s infinite;
         }
 
@@ -323,6 +389,10 @@ img {
         @include m-inner();
     }
 
+    &__title{
+        @include m-h2();
+    }
+
     &__list{
         @include m-flex(center center);
     }
@@ -343,13 +413,47 @@ img {
 
 /* profile */
 .profile{
+    &__inner{
+        @include m-inner();
+    }
+
+    &__title {
+        @include m-h2();
+    }
+
+    &__content{
+        @include m-query(tablet){
+            @include m-flex();
+        }
+    }
+
+    &__pic{
+        @include m-query(tablet) {
+            width: (431/1236)*100%;
+        }
+    }
+
+    &__outer{
+        @include m-query(tablet) {
+            width:(705/1236)*100%;
+        }
+    }
+
+
     span{
         display: inline-block;
     }
 }
 
-/* content */
-.content{
+/* contact */
+.contact{
+    &__inner{
+        @include m-inner();
+    }
+
+    &__title {
+        @include m-h2();
+    }
 
     &__text{
         span{
@@ -357,3 +461,85 @@ img {
         }
     }
 }
+
+/* about */
+.about{
+    &__inner{
+        @include m-inner();
+    }
+
+    &__title {
+        @include m-h2();
+    }
+
+    /* スクロールアニメーション */
+    &__scroll{
+        overflow: hidden;
+    }
+
+    &__list{
+        animation: scroll-right 20s linear infinite;
+        display: flex;
+        width: max-content;
+    }
+
+    &__item{
+        padding: 0 2px;
+        width: calc(100vw / 3 - 10px);
+    }
+}
+@keyframes scroll-right {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* profile
+-------------------------------------*/
+//  ######   ######    #####   #######   ####    ####     #######
+//   ##  ##   ##  ##  ##   ##   ##   #    ##      ##       ##   #
+//   ##  ##   ##  ##  ##   ##   ## #      ##      ##       ## #
+//   #####    #####   ##   ##   ####      ##      ##       ####
+//   ##       ## ##   ##   ##   ## #      ##      ##   #   ## #
+//   ##       ##  ##  ##   ##   ##        ##      ##  ##   ##   #
+//  ####     #### ##   #####   ####      ####    #######  #######
+
+
+
+/* work
+-------------------------------------*/
+//  ##   ##   #####   ######   ###  ##
+//  ##   ##  ##   ##   ##  ##   ##  ##
+//  ##   ##  ##   ##   ##  ##   ## ##
+//  ## # ##  ##   ##   #####    ####
+//  #######  ##   ##   ## ##    ## ##
+//  ### ###  ##   ##   ##  ##   ##  ##
+//  ##   ##   #####   #### ##  ###  ##
+
+
+
+/* about
+-------------------------------------*/
+//    ##     ######    #####   ##   ##  ######
+//   ####     ##  ##  ##   ##  ##   ##  # ## #
+//  ##  ##    ##  ##  ##   ##  ##   ##    ##
+//  ##  ##    #####   ##   ##  ##   ##    ##
+//  ######    ##  ##  ##   ##  ##   ##    ##
+//  ##  ##    ##  ##  ##   ##  ##   ##    ##
+//  ##  ##   ######    #####    #####    ####
+
+
+
+/* contact
+-------------------------------------*/
+//    ####    #####   ##   ##  ######     ##       ####   ######
+//   ##  ##  ##   ##  ###  ##  # ## #    ####     ##  ##  # ## #
+//  ##       ##   ##  #### ##    ##     ##  ##   ##         ##
+//  ##       ##   ##  ## ####    ##     ##  ##   ##         ##
+//  ##       ##   ##  ##  ###    ##     ######   ##         ##
+//   ##  ##  ##   ##  ##   ##    ##     ##  ##    ##  ##    ##
+//    ####    #####   ##   ##   ####    ##  ##     ####    ####

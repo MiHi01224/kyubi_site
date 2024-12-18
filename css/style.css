@@ -1,6 +1,8 @@
 @charset "UTF-8";
-/* base */
+/* base
+----------------------------------*/
 body {
+  min-width: 280px;
   color: #5E3449;
   font-size: 1rem;
   font-family: "Noto Sans", sans-serif, "ヒラギノ丸ゴ ProN", "Hiragino Maru Gothic ProN";
@@ -71,6 +73,7 @@ img {
   cursor: pointer;
 }
 .menu__pic {
+  fill: #C2678B;
   width: 2.375rem;
 }
 @media screen and (min-width: 769px) {
@@ -90,6 +93,21 @@ img {
 }
 
 /* footer */
+.footer__inner {
+  width: 87.1794871795%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__copy {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* btn */
 .btn {
   display: inline-block;
@@ -105,8 +123,10 @@ img {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
+  transition: all 0.2s;
 }
 .btn__text {
+  font-size: 14px;
   margin-right: 0.4375em;
   line-height: 1;
 }
@@ -114,10 +134,16 @@ img {
   width: 1.875rem;
   transition: all 0.3s;
 }
+.btn__pic--color {
+  fill: #C2678B;
+}
 .btn__em {
   margin-right: 0.125em;
   font-weight: bold;
   color: #C2678B;
+}
+.btn:hover .btn__pic {
+  transform: rotate(180deg);
 }
 .btn--contact {
   position: relative;
@@ -126,15 +152,16 @@ img {
   border-bottom: 7px solid #5E3449;
   background-color: #C2678B;
   color: #fff;
+  fill: #fff;
   transition: all 0.2s;
 }
 .btn--contact::before {
-  content: "＼ お気軽にご相談くださいませ！ ／";
+  content: "＼ お気軽にご相談くださいませ！／";
   position: absolute;
   top: -2.1428571429em;
-  left: 0.7142857143em;
+  left: 1.2142857143em;
   color: #5E3449;
-  font-size: 14px;
+  font-size: 12px;
 }
 .btn--contact:hover {
   margin-top: 4em;
@@ -142,6 +169,35 @@ img {
 }
 .btn--contact:hover .btn__pic {
   transform: rotate(180deg);
+}
+
+.sns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 30px;
+}
+.sns__item {
+  margin-left: 5px;
+  width: 30px;
+  transition: 0.2s;
+}
+@media screen and (min-width: 414px) {
+  .sns__item {
+    width: 40px;
+  }
+}
+.sns__item:hover {
+  transform: translateY(-3px);
+}
+.sns__pic {
+  border-radius: 5px;
+}
+@media screen and (min-width: 769px) {
+  .sns {
+    border-radius: 10px;
+  }
 }
 
 /* index
@@ -158,7 +214,7 @@ img {
   margin: 0 calc(50% - 50vw);
   padding: 0;
   width: 100vw;
-  height: 700px;
+  height: 695px;
 }
 @media screen and (min-width: 769px) {
   .top__slider {
@@ -173,7 +229,7 @@ img {
   left: 0;
   opacity: 0;
   background-size: cover;
-  filter: blur(6px) saturate(70%);
+  filter: blur(5px) saturate(70%);
   -webkit-animation: slide 12s infinite;
           animation: slide 12s infinite;
 }
@@ -284,6 +340,10 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
+.work__title {
+  width: 39.7249190939%;
+  min-width: 200px;
+}
 .work__list {
   display: flex;
   flex-wrap: wrap;
@@ -305,12 +365,106 @@ img {
 }
 
 /* profile */
+.profile__inner {
+  width: 87.1794871795%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.profile__title {
+  width: 39.7249190939%;
+  min-width: 200px;
+}
+@media screen and (min-width: 414px) {
+  .profile__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 414px) {
+  .profile__pic {
+    width: 34.8705501618%;
+  }
+}
+@media screen and (min-width: 414px) {
+  .profile__outer {
+    width: 57.0388349515%;
+  }
+}
 .profile span {
   display: inline-block;
 }
 
-/* content */
-.content__text span {
+/* contact */
+.contact__inner {
+  width: 87.1794871795%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contact__title {
+  width: 39.7249190939%;
+  min-width: 200px;
+}
+.contact__text span {
   display: inline-block;
 }
+
+/* about */
+.about {
+  /* スクロールアニメーション */
+}
+.about__inner {
+  width: 87.1794871795%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about__title {
+  width: 39.7249190939%;
+  min-width: 200px;
+}
+.about__scroll {
+  overflow: hidden;
+}
+.about__list {
+  -webkit-animation: scroll-right 20s linear infinite;
+          animation: scroll-right 20s linear infinite;
+  display: flex;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.about__item {
+  padding: 0 2px;
+  width: calc(33.3333333333vw - 10px);
+}
+
+@-webkit-keyframes scroll-right {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+/* profile
+-------------------------------------*/
+/* work
+-------------------------------------*/
+/* about
+-------------------------------------*/
+/* contact
+-------------------------------------*/
 /*# sourceMappingURL=style.css.map */
