@@ -61,12 +61,14 @@ body {
     line-height: (27/16);
     letter-spacing: 0;
 
+    /* 文字選択色 */
     ::selection {
             background-color: $color-accent;
         }
 }
 
 img {
+
     max-width: 100%;
     height: auto;
     vertical-align: bottom;
@@ -423,17 +425,23 @@ img {
 
 @keyframes handwriting {
     0% {
+        opacity: 1;
         stroke-dashoffset: 2500px;
     }
 
-    100% {
+    70%,90% {
+        opacity: 1;
         stroke-dashoffset: 0;
+    }
+
+    95%,100%{
+        opacity: 0;
     }
 }
 
 .handwriting {
     &__text {
-        fill: $color-text;
+        fill: #3a3a3aea;
     }
 
     &__mask {
@@ -582,6 +590,38 @@ img {
 //   ##       ## ##   ##   ##   ## #      ##      ##   #   ## #
 //   ##       ##  ##  ##   ##   ##        ##      ##  ##   ##   #
 //  ####     #### ##   #####   ####      ####    #######  #######
+
+/* career */
+.career{
+
+    &__inner{
+        @include m-inner();
+    }
+
+    &__content{
+        margin-bottom: 100px
+    }
+
+    &__list{
+        margin-bottom: 100px;
+        @include m-flex(flex-start,flex-start);
+    }
+
+    &__item{
+        margin-right: 20px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    &__group{
+
+    }
+
+    &__pic{
+        width:200px;
+    }
+
+}
 
 
 

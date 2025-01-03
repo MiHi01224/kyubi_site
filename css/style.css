@@ -8,6 +8,7 @@ body {
   font-family: "Noto Sans", sans-serif, "ヒラギノ丸ゴ ProN", "Hiragino Maru Gothic ProN";
   line-height: 1.6875;
   letter-spacing: 0;
+  /* 文字選択色 */
 }
 body ::-moz-selection {
   background-color: #E8BACC;
@@ -381,23 +382,33 @@ img {
 
 @-webkit-keyframes handwriting {
   0% {
+    opacity: 1;
     stroke-dashoffset: 2500px;
   }
-  100% {
+  70%, 90% {
+    opacity: 1;
     stroke-dashoffset: 0;
+  }
+  95%, 100% {
+    opacity: 0;
   }
 }
 
 @keyframes handwriting {
   0% {
+    opacity: 1;
     stroke-dashoffset: 2500px;
   }
-  100% {
+  70%, 90% {
+    opacity: 1;
     stroke-dashoffset: 0;
+  }
+  95%, 100% {
+    opacity: 0;
   }
 }
 .handwriting__text {
-  fill: #5E3449;
+  fill: rgba(58, 58, 58, 0.9176470588);
 }
 .handwriting__mask__line {
   fill: none;
@@ -540,6 +551,32 @@ img {
 }
 /* profile
 -------------------------------------*/
+/* career */
+.career__inner {
+  width: 87.1794871795%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.career__content {
+  margin-bottom: 100px;
+}
+.career__list {
+  margin-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.career__item {
+  margin-right: 20px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.career__pic {
+  width: 200px;
+}
+
 /* work
 -------------------------------------*/
 /* about
