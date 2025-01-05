@@ -1,4 +1,14 @@
 @charset "UTF-8";
+/*
+Theme Name: kyubiPort
+Theme URI:
+Author: MiHi
+Author URI:
+Description:九尾みか様のポートフォリオサイト用のテーマです。
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
 /* base
 ----------------------------------*/
 body {
@@ -114,6 +124,17 @@ img {
   margin-right: auto;
 }
 
+/* card */
+.card__image {
+  width: 100%;
+  aspect-ratio: 3/4;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card__title {
+  font-weight: bold;
+}
+
 /* btn */
 .btn {
   display: inline-block;
@@ -204,6 +225,20 @@ img {
   .sns {
     border-radius: 10px;
   }
+}
+
+.page__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-right: auto;
+}
+.page__item {
+  margin: 0 5px;
+}
+.page__item:hover {
+  color: #C2678B;
 }
 
 /* index
@@ -381,23 +416,33 @@ img {
 
 @-webkit-keyframes handwriting {
   0% {
+    opacity: 1;
     stroke-dashoffset: 2500px;
   }
-  100% {
+  70%, 90% {
+    opacity: 1;
     stroke-dashoffset: 0;
+  }
+  95%, 100% {
+    opacity: 0;
   }
 }
 
 @keyframes handwriting {
   0% {
+    opacity: 1;
     stroke-dashoffset: 2500px;
   }
-  100% {
+  70%, 90% {
+    opacity: 1;
     stroke-dashoffset: 0;
+  }
+  95%, 100% {
+    opacity: 0;
   }
 }
 .handwriting__text {
-  fill: #5E3449;
+  fill: rgba(58, 58, 58, 0.9176470588);
 }
 .handwriting__mask__line {
   fill: none;
@@ -418,6 +463,7 @@ img {
   margin-right: auto;
 }
 .work__title {
+  margin-bottom: 60px;
   width: 39.7249190939%;
   min-width: 200px;
 }
@@ -426,6 +472,38 @@ img {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center center;
+}
+.work__list .landscape {
+  width: 95.9546925566%;
+}
+@media screen and (min-width: 414px) {
+  .work__list .landscape {
+    width: 62.6213592233%;
+  }
+}
+@media screen and (min-width: 769px) {
+  .work__list .landscape {
+    width: 46.925566343%;
+  }
+}
+.work__list .landscape .card__image {
+  aspect-ratio: 4/3;
+}
+.work__list .tag-header {
+  width: 95.9546925566%;
+}
+@media screen and (min-width: 414px) {
+  .work__list .tag-header {
+    width: 62.6213592233%;
+  }
+}
+@media screen and (min-width: 769px) {
+  .work__list .tag-header {
+    width: 46.925566343%;
+  }
+}
+.work__list .tag-header .card__image {
+  aspect-ratio: 2/1;
 }
 .work__item {
   width: 47.9773462783%;
@@ -449,6 +527,7 @@ img {
   margin-right: auto;
 }
 .profile__title {
+  margin-bottom: 60px;
   width: 39.7249190939%;
   min-width: 200px;
 }
@@ -482,6 +561,7 @@ img {
   margin-right: auto;
 }
 .contact__title {
+  margin-bottom: 60px;
   width: 39.7249190939%;
   min-width: 200px;
 }
@@ -516,6 +596,7 @@ img {
   margin-right: auto;
 }
 .about__title {
+  margin-bottom: 60px;
   width: 39.7249190939%;
   min-width: 200px;
 }
@@ -538,8 +619,92 @@ img {
   -o-object-fit: cover;
      object-fit: cover;
 }
+/* single
+-------------------------------------*/
+.single__inner {
+  width: 87.1794871795%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 110px;
+}
+@media screen and (min-width: 769px) {
+  .single__inner {
+    margin-top: 160px;
+  }
+}
+@media screen and (min-width: 414px) {
+  .single__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 414px) {
+  .single__image {
+    width: 56.6343042071%;
+  }
+}
+@media screen and (min-width: 769px) {
+  .single__image {
+    width: 68.7702265372%;
+  }
+}
+@media screen and (min-width: 414px) {
+  .single__info {
+    width: 40.4530744337%;
+  }
+}
+@media screen and (min-width: 769px) {
+  .single__info {
+    width: 28.3171521036%;
+  }
+}
+.single__category {
+  display: inline-block;
+  padding: 5px 20px;
+  border-radius: 15px;
+  background-color: #5E3449;
+  color: #fff;
+}
+.single__title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+.single p {
+  margin-bottom: 10px;
+}
+
 /* profile
 -------------------------------------*/
+/* career */
+.career__inner {
+  width: 87.1794871795%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.career__content {
+  margin-bottom: 100px;
+}
+.career__list {
+  margin-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.career__item {
+  margin-right: 20px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.career__pic {
+  width: 200px;
+}
+
 /* work
 -------------------------------------*/
 /* about

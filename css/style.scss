@@ -1,5 +1,16 @@
 @charset "utf-8";
 
+/*
+Theme Name: kyubiPort
+Theme URI:
+Author: MiHi
+Author URI:
+Description:九尾みか様のポートフォリオサイト用のテーマです。
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
 $color-main: #C2678B;
 $color-text: #5E3449;
 $color-accent: #E8BACC;
@@ -30,6 +41,7 @@ $breakpoints: (
 }
 
 @mixin m-h2(){
+    margin-bottom: 60px;
     width:(491/1236)*100%;
     min-width: 200px
 }
@@ -156,6 +168,21 @@ img {
     }
 }
 
+/* card */
+.card{
+    &__image{
+        width: 100%;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+    }
+
+    &__title{
+        font-weight: bold;
+    }
+
+}
+
+
 
 /* btn */
 .btn{
@@ -250,6 +277,23 @@ img {
     @include m-query(desktop) {
         border-radius: 10px;
     }
+}
+
+.page{
+
+    &__list{
+        @include m-flex(center,center);
+        margin-right: auto;
+    }
+
+    &__item{
+        margin:0 5px;
+
+        &:hover {
+            color: $color-main;
+        }
+    }
+
 }
 
 /* index
@@ -423,17 +467,23 @@ img {
 
 @keyframes handwriting {
     0% {
+        opacity: 1;
         stroke-dashoffset: 2500px;
     }
 
-    100% {
+    70%,90% {
+        opacity: 1;
         stroke-dashoffset: 0;
+    }
+
+    95%,100%{
+        opacity: 0;
     }
 }
 
 .handwriting {
     &__text {
-        fill: $color-text;
+        fill: #3a3a3aea;
     }
 
     &__mask {
@@ -461,6 +511,38 @@ img {
 
     &__list{
         @include m-flex(center center);
+
+        .landscape {
+            width: (1186/1236)*100%;
+
+            @include m-query(tablet) {
+                    width: (774/1236)*100%;
+                }
+
+                @include m-query(desktop) {
+                    width: (580/1236)*100%;
+                }
+
+                .card__image{
+                    aspect-ratio: 4/3;
+                }
+        }
+
+        .tag-header {
+            width: (1186/1236)*100%;
+
+                @include m-query(tablet) {
+                    width: (774/1236)*100%;
+                }
+
+                @include m-query(desktop) {
+                    width: (580/1236)*100%;
+                }
+
+            .card__image {
+                aspect-ratio: 2/1;
+            }
+        }
     }
 
     &__item{
@@ -474,6 +556,8 @@ img {
         @include m-query(desktop) {
             width: (290/1236)*100%;
         }
+
+
     }
 }
 
@@ -573,6 +657,75 @@ img {
     }
 }
 
+
+/* single
+-------------------------------------*/
+//  ## ##     ####   ###  ##   ## ##   ####     ### ###
+// ##   ##     ##      ## ##  ##   ##   ##       ##  ##
+// ####        ##     # ## #  ##        ##       ##
+//  #####      ##     ## ##   ##  ###   ##       ## ##
+//     ###     ##     ##  ##  ##   ##   ##       ##
+// ##   ##     ##     ##  ##  ##   ##   ##  ##   ##  ##
+//  ## ##     ####   ###  ##   ## ##   ### ###  ### ###
+
+.single{
+
+    &__inner{
+        @include m-inner();
+        margin-top: 110px;
+
+        @include m-query(desktop) {
+            margin-top: 160px;
+        }
+    }
+
+    &__content{
+        @include m-query(tablet) {
+                @include m-flex();
+        }
+    }
+
+    &__image{
+        @include m-query(tablet) {
+            width:(700/1236)*100%;
+        }
+
+        @include m-query(desktop) {
+            width: (850/1236)*100%;
+        }
+    }
+
+    &__info{
+        @include m-query(tablet) {
+                width: (500/1236)*100%;
+            }
+
+        @include m-query(desktop) {
+            width: (350/1236)*100%;
+        }
+    }
+
+    &__category{
+        display: inline-block;
+        padding:5px 20px;
+        border-radius: 15px;
+        background-color:$color-text;
+        color: #fff;
+    }
+
+    &__title{
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 25px;
+    }
+
+    p{
+        margin-bottom: 10px;
+    }
+}
+
+
+
 /* profile
 -------------------------------------*/
 //  ######   ######    #####   #######   ####    ####     #######
@@ -582,6 +735,34 @@ img {
 //   ##       ## ##   ##   ##   ## #      ##      ##   #   ## #
 //   ##       ##  ##  ##   ##   ##        ##      ##  ##   ##   #
 //  ####     #### ##   #####   ####      ####    #######  #######
+
+/* career */
+.career{
+
+    &__inner{
+        @include m-inner();
+    }
+
+    &__content{
+        margin-bottom: 100px
+    }
+
+    &__list{
+        margin-bottom: 100px;
+        @include m-flex(flex-start,flex-start);
+    }
+
+    &__item{
+        margin-right: 20px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    &__pic{
+        width:200px;
+    }
+
+}
 
 
 
