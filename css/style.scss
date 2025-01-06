@@ -97,9 +97,10 @@ img {
     background-color: rgba(255,255,255,0.7);
 
     &__inner{
+        position: relative;
+        height: inherit;
         @include m-inner();
         @include m-flex();
-
     }
 
     &__logo{
@@ -109,31 +110,61 @@ img {
             width:f-rem(120);
         }
     }
+
 }
 
 .nav{
-    display: none;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    left: 200px;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 200px 50px;
+    transform: translateX(100%);
+    background-color:rgba(255, 255, 255, 0.8);
+    transition: ease .4s;
+
     @include m-query() {
         display: block;
     }
 
 
-    &__list {
-        @include m-flex();
-    }
+    // &__list {
+    //     // @include m-flex();
+    // }
 
     &__item {
+        margin:5px 0;
+        display: block;
         font-family:"Kaisei Decol","ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
         margin-left: (16em/16);
+        transition: ease .4s;
+
+        &:hover{
+            color: $color-main;
+            transform: translateX(10px);
+        }
     }
 
     &__stop {
         cursor: pointer;
     }
+
+    &--active{
+        transform: translateX(-200px);
+        @include m-query() {
+                transform: translateX(-100px);
+            }
+    }
 }
 
 .menu {
     cursor: pointer;
+        background-color: transparent;
+        border-color: transparent;
+        z-index: 9999;
 
     &__pic{
         fill:$color-main;
@@ -155,6 +186,8 @@ img {
     }
 }
 
+
+
 /* footer */
 .footer{
     &__inner{
@@ -170,18 +203,52 @@ img {
 
 /* card */
 .card{
+    transition: all 0.3s;
+
+    &:hover{
+        transform:translateY(3px);
+    }
+
     &__image{
         width: 100%;
         aspect-ratio: 3/4;
         object-fit: cover;
+        border-radius: 20px;
+        transition: all 0.3s;
+    }
+
+    &:hover .card__image {
+        opacity:0.7;
+        border-radius: 5px;
     }
 
     &__title{
         font-weight: bold;
     }
 
+    &__text{
+        font-size: f-rem(14);
+
+        a{
+            transition: ease .4s;
+        }
+
+        a:hover{
+            color: $color-main;
+            font-weight: bold;
+        }
+    }
+
 }
 
+/* unit */
+.unit{
+    &__title{
+        font-size: f-rem(25);
+        font-weight: bold;
+        font-family: "Kaisei Decol", "ヒラギノ丸ゴ ProN", "Hiragino Maru Gothic ProN";
+    }
+}
 
 
 /* btn */
@@ -197,7 +264,7 @@ img {
     transition: all 0.2s;
 
     &__text{
-        font-size: 14px;
+        font-size: f-rem(14);
         margin-right: (7em/16);
         line-height: 1;
     }
@@ -501,6 +568,7 @@ img {
 
 /* work */
 .work{
+    margin-bottom: 100px;
     &__inner{
         @include m-inner();
     }
@@ -524,7 +592,7 @@ img {
                 }
 
                 .card__image{
-                    aspect-ratio: 4/3;
+                    aspect-ratio: 4/2.673;
                 }
         }
 
@@ -546,8 +614,8 @@ img {
     }
 
     &__item{
+        margin-bottom: 10px;
         width: (593/1236)*100%;
-
 
         @include m-query(tablet){
             width: (387/1236)*100%;
@@ -563,6 +631,7 @@ img {
 
 /* profile */
 .profile{
+    margin-bottom: 100px;
     &__inner{
         @include m-inner();
     }
@@ -596,6 +665,8 @@ img {
 
 /* contact */
 .contact{
+    margin-bottom: 100px;
+
     &__inner{
         @include m-inner();
     }
@@ -623,6 +694,7 @@ img {
 }
 
 .about{
+    margin-bottom: 100px;
     &__inner{
         @include m-inner();
     }
@@ -633,6 +705,7 @@ img {
 
     /* スクロールアニメーション */
     &__scroll{
+        margin-bottom: 20px;
         overflow: hidden;
         display: flex;
     }
@@ -776,6 +849,12 @@ img {
 //  ### ###  ##   ##   ##  ##   ##  ##
 //  ##   ##   #####   #### ##  ###  ##
 
+.pagehead{
+    margin-top: 60px;
+    @include m-query(desktop){
+        margin-top: 100px;
+    }
+}
 
 
 /* about
@@ -799,3 +878,37 @@ img {
 //  ##       ##   ##  ##  ###    ##     ######   ##         ##
 //   ##  ##  ##   ##  ##   ##    ##     ##  ##    ##  ##    ##
 //    ####    #####   ##   ##   ####    ##  ##     ####    ####
+
+input[type="checkbox"] {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $color-text;
+    border-radius: 50%;
+    vertical-align: -2px;
+}
+
+input[type="checkbox"]:checked:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: $color-main;
+    content: '';
+}
+
+input[type="text"] {
+    border: 1px solid $color-text;
+}
+
+input[type="email"] {
+    border: 1px solid $color-text;
+}
+
+.submit{
+    text-align: center;
+    width:100px;
+}

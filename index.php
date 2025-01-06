@@ -119,7 +119,7 @@
 
             </article>
 
-            <a class="btn" href="<?php echo home_url(); ?>/post">
+            <a class="btn" href="<?php echo home_url('/work/'); ?>">
                 <p class="btn__text"><em class="btn__em">制作実績</em>を詳しく見る</p>
                 <svg class="btn__pic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53.29 51.34">
                     <path class="btn__pic--color"
@@ -140,7 +140,7 @@
                         <span>可愛い女の子を描くのが好きです。繊細でキラキラしたイラストが得意です。</span>
                         <span>いつかオリジナルのイラスト本が出せたらいいなと思っております。</span>
                     </p>
-                    <a class="btn" href="#">
+                    <a class="btn" href="<?php echo home_url('/profile/'); ?>">
                         <p class="btn__text"><em class="btn__em">プロフィール</em>を詳しく見る</p>
                         <svg class="btn__pic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53.29 51.34">
                             <path class="btn__pic--color"
@@ -161,7 +161,7 @@
         <div class="contact__inner">
             <h2 class="contact__title"><img src="<?php echo get_theme_file_uri('./image/title_contact.svg" alt="コンタクト'); ?>"></h2>
             <p class="contact__text">制作のご依頼はこちらからお問合せください。</p>
-            <a class="btn btn--contact" href="#">
+            <a class="btn btn--contact" href="<?php echo home_url('/contact/'); ?>">
                 <p class="btn__text">ご依頼・ご相談はこちら</p>
                 <svg class="btn__pic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53.29 51.34">
                     <path class="btn__pic--path"
@@ -205,7 +205,7 @@
                 <span>VtuberやVライバーの立ち絵やLive2d用パーツ分けイラスト、歌ってみたのイラスト・</span>
                 <span>SDキャラ等様々なイラストを製作・納品しております。</span>
             </p>
-            <a class="btn" href="#">
+            <a class="btn" href="<?php echo home_url('/about/'); ?>">
                 <p class="btn__text"><em class="btn__em">ご依頼について</em>詳しく見る</p>
                 <svg class="btn__pic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53.29 51.34">
                     <path class="btn__pic--color"

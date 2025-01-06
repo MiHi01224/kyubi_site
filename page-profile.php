@@ -1,38 +1,74 @@
 <?php get_header(); ?>
 
-
 <main id="top" class="main">
 
-    <?php
-    if (have_posts()):
-        while (have_posts()):
-            the_post();
-    ?>
-
-            <section class="single">
-                <div class="single__inner">
-                    <h2 class="single__title"><?php the_title(); ?></h2>
-                    <?php the_content(); ?>
+    <section class="profile pagehead">
+        <div class="profile__inner">
+            <h2 class="profile__title"><img src="<?php echo get_theme_file_uri('./image/title_profile.svg'); ?>" alt="プロフィール"></h2>
+            <div class="profile__content">
+                <img class="profile__pic" src="<?php echo get_theme_file_uri('./image/illustration/pic_top2.png'); ?>" alt="">
+                <div class="profile__outer unit">
+                    <h3 class="unit__title">九尾みか</h3>
+                    <p class="unit__text">
+                        <span>可愛い女の子を描くのが好きです。繊細でキラキラしたイラストが得意です。</span>
+                        <span>いつかオリジナルのイラスト本が出せたらいいなと思っております。</span>
+                    </p>
+                    <ul class="profile__list sns">
+                        <li class="sns__item"><a href="https://x.com/primarys2020" target=”_blank”><img class="sns__pic" src="<?php echo get_theme_file_uri('./image/iconX.svg'); ?>" alt="キュウビミカのエックスに移動"></a></li>
+                        <li class="sns__item"><a href="https://www.pixiv.net/users/3905543" target=”_blank”><img class="sns__pic" src="<?php echo get_theme_file_uri('./image/iconPixiv.png'); ?>" alt="キュウビミカのピクシブに移動"></a></li>
+                        <li class="sns__item"><a href="https://bsky.app/profile/primarys2020.bsky.social" target=”_blank”><img class="sns__pic" src="<?php echo get_theme_file_uri('./image/iconBluesky.png'); ?>" alt="キュウビミカのブルースカイに移動"></a></li>
+                    </ul>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
-        <?php
-        endwhile;
-    else:
-        ?>
-
-        <p>記事がありません。</p>
-
-    <?php
-    endif;
-    ?>
-
+    <section class="career">
+        <div class="career__inner">
+            <h2 class="career__title">経歴</h2>
+            <div class="career__content">
+                <div class="career__list">
+                    <h3 class="career__item">2020年</h3>
+                    <div class="carrer__group">
+                        <p class="career__info">5月 フロンティアワークス様とイラストレーター契約</p>
+                        <p class="career__info">7月 トミーウォーカー様とイラストレーター契約</p>
+                    </div>
+                </div>
+                <div class="career__list">
+                    <h3 class="career__item">2021年</h3>
+                    <div class="carrer__group">
+                        <p class="career__info">10月 pixiv公式コンテストモテモテ魔王のイラコン入賞</p>
+                        <img class="career__pic" src="./image/illustration/career_pic1.png" alt="">
+                        <p class="career__info">12月 pixivision戦うメイドさん特集掲載</p>
+                        <img class="career__pic" src="./image/illustration/career_pic2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="career__list">
+                    <h3 class="career__item">2022年</h3>
+                    <div class="career__group">
+                        <p class="career__info">6月 C社ソーシャルゲームイラスト</p>
+                    </div>
+                </div>
+                <div class="career__list">
+                    <h3 class="career__item">2023年</h3>
+                    <div class="career__group">
+                        <p class="career__info">2月 pixivision「魚と女の子」のイラスト特集掲載</p>
+                        <img class="career__pic" src="./image/illustration/career_pic3.png" alt="">
+                        <p class="career__info">6月pixivision「「トワツガイ」のファンアート特集」掲載</p>
+                        <img class="career__pic" src="./image/illustration/career_pic4.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <p class="career__note">&#8251;2020年5月からフロンティアワークス様、 7月からトミーウォーカー様とイラストレーター契約をしており、 PBWにてイラスト受注制作をしております。（現在休止中ですがたまに窓開けいたします）</p>
+            <p class="career__text">現在までに250件ほど納品済です。締切は厳守します。</p>
+        </div>
+    </section>
 
     <section class="contact">
         <div class="contact__inner">
             <h2 class="contact__title"><img src="<?php echo get_theme_file_uri('./image/title_contact.svg" alt="コンタクト'); ?>"></h2>
             <p class="contact__text">制作のご依頼はこちらからお問合せください。</p>
-            <a class="btn btn--contact" href="#">
+            <a class="btn btn--contact" href="<?php echo home_url('/contact/'); ?>">
                 <p class="btn__text">ご依頼・ご相談はこちら</p>
                 <svg class="btn__pic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53.29 51.34">
                     <path class="btn__pic--path"
@@ -76,7 +112,7 @@
                 <span>VtuberやVライバーの立ち絵やLive2d用パーツ分けイラスト、歌ってみたのイラスト・</span>
                 <span>SDキャラ等様々なイラストを製作・納品しております。</span>
             </p>
-            <a class="btn" href="#">
+            <a class="btn" href="<?php echo home_url('/about/'); ?>">
                 <p class="btn__text"><em class="btn__em">ご依頼について</em>詳しく見る</p>
                 <svg class="btn__pic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53.29 51.34">
                     <path class="btn__pic--color"
@@ -85,6 +121,6 @@
             </a>
         </div>
     </section>
-
 </main>
+
 <?php get_footer(); ?>

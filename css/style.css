@@ -45,6 +45,8 @@ img {
   background-color: rgba(255, 255, 255, 0.7);
 }
 .header__inner {
+  position: relative;
+  height: inherit;
   width: 87.1794871795%;
   max-width: 1000px;
   margin-left: auto;
@@ -64,29 +66,51 @@ img {
 }
 
 .nav {
-  display: none;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  left: 200px;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 200px 50px;
+  transform: translateX(100%);
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: ease 0.4s;
 }
 @media screen and (min-width: 769px) {
   .nav {
     display: block;
   }
 }
-.nav__list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
 .nav__item {
+  margin: 5px 0;
+  display: block;
   font-family: "Kaisei Decol", "ヒラギノ丸ゴ ProN", "Hiragino Maru Gothic ProN";
   margin-left: 1em;
+  transition: ease 0.4s;
+}
+.nav__item:hover {
+  color: #C2678B;
+  transform: translateX(10px);
 }
 .nav__stop {
   cursor: pointer;
 }
+.nav--active {
+  transform: translateX(-200px);
+}
+@media screen and (min-width: 769px) {
+  .nav--active {
+    transform: translateX(-100px);
+  }
+}
 
 .menu {
   cursor: pointer;
+  background-color: transparent;
+  border-color: transparent;
+  z-index: 9999;
 }
 .menu__pic {
   fill: #C2678B;
@@ -125,14 +149,43 @@ img {
 }
 
 /* card */
+.card {
+  transition: all 0.3s;
+}
+.card:hover {
+  transform: translateY(3px);
+}
 .card__image {
   width: 100%;
   aspect-ratio: 3/4;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+.card:hover .card__image {
+  opacity: 0.7;
+  border-radius: 5px;
 }
 .card__title {
   font-weight: bold;
+}
+.card__text {
+  font-size: 0.875rem;
+}
+.card__text a {
+  transition: ease 0.4s;
+}
+.card__text a:hover {
+  color: #C2678B;
+  font-weight: bold;
+}
+
+/* unit */
+.unit__title {
+  font-size: 1.5625rem;
+  font-weight: bold;
+  font-family: "Kaisei Decol", "ヒラギノ丸ゴ ProN", "Hiragino Maru Gothic ProN";
 }
 
 /* btn */
@@ -153,7 +206,7 @@ img {
   transition: all 0.2s;
 }
 .btn__text {
-  font-size: 14px;
+  font-size: 0.875rem;
   margin-right: 0.4375em;
   line-height: 1;
 }
@@ -456,6 +509,9 @@ img {
 }
 
 /* work */
+.work {
+  margin-bottom: 100px;
+}
 .work__inner {
   width: 87.1794871795%;
   max-width: 1000px;
@@ -487,7 +543,7 @@ img {
   }
 }
 .work__list .landscape .card__image {
-  aspect-ratio: 4/3;
+  aspect-ratio: 4/2.673;
 }
 .work__list .tag-header {
   width: 95.9546925566%;
@@ -506,6 +562,7 @@ img {
   aspect-ratio: 2/1;
 }
 .work__item {
+  margin-bottom: 10px;
   width: 47.9773462783%;
 }
 @media screen and (min-width: 414px) {
@@ -520,6 +577,9 @@ img {
 }
 
 /* profile */
+.profile {
+  margin-bottom: 100px;
+}
 .profile__inner {
   width: 87.1794871795%;
   max-width: 1000px;
@@ -554,6 +614,9 @@ img {
 }
 
 /* contact */
+.contact {
+  margin-bottom: 100px;
+}
 .contact__inner {
   width: 87.1794871795%;
   max-width: 1000px;
@@ -587,6 +650,7 @@ img {
   }
 }
 .about {
+  margin-bottom: 100px;
   /* スクロールアニメーション */
 }
 .about__inner {
@@ -601,6 +665,7 @@ img {
   min-width: 200px;
 }
 .about__scroll {
+  margin-bottom: 20px;
   overflow: hidden;
   display: flex;
 }
@@ -707,8 +772,50 @@ img {
 
 /* work
 -------------------------------------*/
+.pagehead {
+  margin-top: 60px;
+}
+@media screen and (min-width: 769px) {
+  .pagehead {
+    margin-top: 100px;
+  }
+}
+
 /* about
 -------------------------------------*/
 /* contact
 -------------------------------------*/
+input[type=checkbox] {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #5E3449;
+  border-radius: 50%;
+  vertical-align: -2px;
+}
+
+input[type=checkbox]:checked:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #C2678B;
+  content: "";
+}
+
+input[type=text] {
+  border: 1px solid #5E3449;
+}
+
+input[type=email] {
+  border: 1px solid #5E3449;
+}
+
+.submit {
+  text-align: center;
+  width: 100px;
+}
 /*# sourceMappingURL=style.css.map */
