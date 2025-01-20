@@ -16,8 +16,8 @@ $color-text: #5E3449;
 $color-accent: #E8BACC;
 
 $breakpoints: (
-    "desktop": "screen and (min-width: 769px)",
-    "tablet": "screen and (min-width: 414px)",
+    "tablet": "(414px <= width)",
+    "desktop": "(769px <= width)",
     ) !default;
 
 @mixin m-query($breakpoint: "desktop") {
@@ -82,6 +82,17 @@ img {
     max-width: 100%;
     height: auto;
     vertical-align: bottom;
+    /* 画像長押し無効 */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-touch-callout: none;
+    -moz-user-select: none;
+    user-select: none;
+    /* 画像ドラッグ無効 */
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
 }
 
 /* header
@@ -304,7 +315,7 @@ img {
             content: "＼ お気軽にご相談くださいませ！／";
             position: absolute;
             top: -(30em/14);
-            left: (17em/14);
+            left: (46em/14);
             color:$color-text;
             font-size: 12px;
         }
@@ -316,6 +327,11 @@ img {
             .btn__pic{
                 transform: rotate(180deg);
             }
+        }
+
+        .btn__text{
+            font-size: f-rem(18);
+            font-weight: bold;
         }
     }
 }
@@ -900,11 +916,36 @@ input[type="checkbox"]:checked:before {
     content: '';
 }
 
+input[type="radio"] {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $color-text;
+    border-radius: 50%;
+    vertical-align: -2px;
+}
+
+input[type="radio"]:checked:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: $color-main;
+    content: '';
+}
+
 input[type="text"] {
     border: 1px solid $color-text;
 }
 
 input[type="email"] {
+    border: 1px solid $color-text;
+}
+
+input[type="url"] {
     border: 1px solid $color-text;
 }
 

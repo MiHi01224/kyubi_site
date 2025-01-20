@@ -119,7 +119,7 @@
 
             </article>
 
-            <a class="btn" href="<?php echo home_url('/work/'); ?>">
+            <a class="btn" href="<?php echo home_url('/post/'); ?>">
                 <p class="btn__text"><em class="btn__em">制作実績</em>を詳しく見る</p>
                 <svg class="btn__pic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53.29 51.34">
                     <path class="btn__pic--color"
