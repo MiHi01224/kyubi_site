@@ -20,7 +20,7 @@ function my_style_output()
     /* google-font */
     wp_enqueue_style(
         'google-font',
-        'https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=Major+Mono+Display&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap',
+        'https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=Major+Mono+Display&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap&text=menuプロフィール制作実績ご依頼についてお問い合わせ',
         array(),
         null
     );
@@ -72,3 +72,26 @@ function catch_that_image()
     }
     return $first_img;
 }
+
+
+
+// Gutenberg用のCSSを読み込まない
+// //WordPressに含まれているjQueryを読み込まない
+
+function my_delete_plugin_files()
+{
+    //IDを指定し解除
+    wp_deregister_style('wp-block-library');
+    wp_deregister_script('jquery');
+}
+add_action('wp_enqueue_scripts', 'my_delete_plugin_files');
+
+//　管理画面のアイコンをログインした人のみ読み込むように
+function dashicons_dequeue_styles()
+{
+    if (current_user_can('update_core')) {
+        return;
+    }
+    wp_deregister_style('dashicons');
+}
+add_action('wp_enqueue_scripts', 'dashicons_dequeue_styles');
