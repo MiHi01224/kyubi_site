@@ -485,18 +485,22 @@ img {
 
 @-webkit-keyframes handwriting {
   0% {
+    opacity: 1;
     stroke-dashoffset: 2500px;
   }
-  100% {
+  70%, 90% {
+    opacity: 1;
     stroke-dashoffset: 0;
   }
 }
 
 @keyframes handwriting {
   0% {
+    opacity: 1;
     stroke-dashoffset: 2500px;
   }
-  100% {
+  70%, 90% {
+    opacity: 1;
     stroke-dashoffset: 0;
   }
 }
@@ -750,58 +754,6 @@ img {
 
 /* profile
 -------------------------------------*/
-/* career */
-.career__inner {
-  width: 87.1794871795%;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.career__content {
-  margin-bottom: 100px;
-}
-.career__list {
-  margin-bottom: 100px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-.career__item {
-  margin-right: 20px;
-  font-size: 30px;
-  font-weight: bold;
-}
-.career__pic {
-  width: 200px;
-}
-
-/* career */
-.career__inner {
-  width: 87.1794871795%;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.career__content {
-  margin-bottom: 100px;
-}
-.career__list {
-  margin-bottom: 100px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-.career__item {
-  margin-right: 20px;
-  font-size: 30px;
-  font-weight: bold;
-}
-.career__pic {
-  width: 200px;
-}
-
 /* work
 -------------------------------------*/
 .pagehead {

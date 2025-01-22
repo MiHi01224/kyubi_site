@@ -19,7 +19,7 @@
 
     <header class="header">
         <div class="header__inner">
-            <h1 class="header__logo"><a href="<?php echo home_url('#top'); ?>"><img src="<?php echo get_theme_file_uri('./image/logo.svg" alt="プライマリ'); ?>"></a></h1>
+            <h1 class="header__logo"><a href="<?php echo home_url('#top'); ?>"><img src="<?php echo get_theme_file_uri('./image/logo.webp" alt="プライマリ'); ?>"></a></h1>
             <nav class="header__nav nav" id="js-nav">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="<?php echo home_url('/profile/'); ?>">プロフィール</a></li>

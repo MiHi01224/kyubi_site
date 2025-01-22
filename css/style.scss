@@ -552,10 +552,12 @@ img {
 
 @keyframes handwriting {
     0% {
+        opacity: 1;
         stroke-dashoffset: 2500px;
     }
 
-    100% {
+    70%,90% {
+        opacity: 1;
         stroke-dashoffset: 0;
     }
 }
@@ -820,63 +822,6 @@ img {
 //   ##       ## ##   ##   ##   ## #      ##      ##   #   ## #
 //   ##       ##  ##  ##   ##   ##        ##      ##  ##   ##   #
 //  ####     #### ##   #####   ####      ####    #######  #######
-
-/* career */
-.career{
-
-    &__inner{
-        @include m-inner();
-    }
-
-    &__content{
-        margin-bottom: 100px
-    }
-
-    &__list{
-        margin-bottom: 100px;
-        @include m-flex(flex-start,flex-start);
-    }
-
-    &__item{
-        margin-right: 20px;
-        font-size: 30px;
-        font-weight: bold;
-    }
-
-
-    &__pic{
-        width:200px;
-    }
-
-}
-
-/* career */
-.career{
-
-    &__inner{
-        @include m-inner();
-    }
-
-    &__content{
-        margin-bottom: 100px
-    }
-
-    &__list{
-        margin-bottom: 100px;
-        @include m-flex(flex-start,flex-start);
-    }
-
-    &__item{
-        margin-right: 20px;
-        font-size: 30px;
-        font-weight: bold;
-    }
-
-    &__pic{
-        width:200px;
-    }
-
-}
 
 
 
