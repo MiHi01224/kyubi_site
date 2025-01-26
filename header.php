@@ -22,17 +22,6 @@
             <h1 class="header__logo" id="js-logo">
                 <a href="<?php echo home_url('#'); ?>">
                     <svg id="_レイヤー_2" data-name="レイヤー_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 347 311.35">
-                        <defs>
-                            <style>
-                                .cls-1 {
-                                    fill: #5c3348;
-                                }
-
-                                .cls-2 {
-                                    fill: #b96385;
-                                }
-                            </style>
-                        </defs>
                         <g id="_レイヤー_1-2" data-name="レイヤー_1">
                             <g>
                                 <g>

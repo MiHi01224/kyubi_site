@@ -13,7 +13,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 $color-main: #C2678B;
 $color-text: #5E3449;
-$color-accent: #E8BACC;
+$color-accent: #e8c7d3;
 
 $breakpoints: (
     "tablet": "(414px <= width)",
@@ -125,6 +125,14 @@ img {
             width:f-rem(120);
         }
 
+        .cls-1 {
+            fill: $color-text;
+        }
+
+        .cls-2 {
+            fill:$color-main;
+        }
+
         &:hover {
             transform: translateY(-3px);
             opacity: 0.6;
@@ -138,7 +146,6 @@ img {
         .cls-2 {
             fill: #fff;
         }
-
     }
 }
 

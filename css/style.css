@@ -21,10 +21,10 @@ body {
   /* 文字選択色 */
 }
 body ::-moz-selection {
-  background-color: #E8BACC;
+  background-color: #e8c7d3;
 }
 body ::selection {
-  background-color: #E8BACC;
+  background-color: #e8c7d3;
 }
 
 img {
@@ -78,12 +78,18 @@ img {
     width: 7.5rem;
   }
 }
+.header__logo .cls-1 {
+  fill: #5E3449;
+}
+.header__logo .cls-2 {
+  fill: #C2678B;
+}
 .header__logo:hover {
   transform: translateY(-3px);
   opacity: 0.6;
 }
 .header--active .cls-1 {
-  fill: #E8BACC;
+  fill: #e8c7d3;
 }
 .header--active .cls-2 {
   fill: #fff;
@@ -201,7 +207,7 @@ img {
   opacity: 0.6;
 }
 .menu--active .menu__pic {
-  fill: #E8BACC;
+  fill: #e8c7d3;
   transform: rotate(360deg);
 }
 .menu--active .menu__text {
