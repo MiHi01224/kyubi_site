@@ -117,47 +117,85 @@ img {
     }
 
     &__logo{
+        z-index: 2;
         width:f-rem(85);
+        transition: all 0.3s;
 
         @include m-query(){
             width:f-rem(120);
         }
+
+        &:hover {
+            transform: translateY(-3px);
+            opacity: 0.6;
+        }
     }
 
+    &--active {
+        .cls-1{
+            fill: $color-accent;
+        }
+        .cls-2 {
+            fill: #fff;
+        }
+
+    }
 }
 
-.nav{
-    overflow: hidden;
+.flower {
     position: absolute;
-    right: 0;
-    left: 200px;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    padding: 200px 50px;
-    transform: translateX(100%);
-    background-color:rgba(255, 255, 255, 0.8);
-    transition: ease .4s;
+    top: -5px;
+    right: -25px;
+    width: 100px;
+    height: 100px;
+    background-color: $color-text;
+    border-radius: 50%;
+    transform:scale(0);
+    transition: all 0.7s ease-in-out;
+    z-index: 1;
 
-    @include m-query() {
-        display: block;
+    &--active{
+        transform:scale(40);
+        // background-color: rgba(255,255,255,0.7);
+    }
+}
+
+
+.nav{
+    &__list {
+        display: none;
+        @include m-query(){
+            display: inline;
+            @include m-flex();
+        }
     }
 
-
-    // &__list {
-    //     // @include m-flex();
-    // }
-
     &__item {
-        margin:5px 0;
+        position: relative;
         display: block;
+        margin:5px (10em/16);
         font-family:"Kaisei Decol","ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
-        margin-left: (16em/16);
-        transition: ease .4s;
+        transition: color 0.3s;
+
+        &::after{
+            content: "";
+            position: absolute;
+            left:0;
+            bottom: -1px;
+            width: 100%;
+            height: 1px;
+            background: $color-main;
+            transform: scale(0, 1);
+            transform-origin: right top;
+            transition: transform 0.3s;
+        }
 
         &:hover{
             color: $color-main;
-            transform: translateX(10px);
+            &::after {
+                transform:scale(1,1);
+                transform-origin: left top;
+            }
         }
     }
 
@@ -166,14 +204,31 @@ img {
     }
 
     &--active{
-        transform: translateX(-200px);
-        @include m-query() {
-                transform: translateX(-100px);
-            }
+        position: absolute;
+        top: 100px;
+        left: 0;
+        z-index: 10;
+        height: 100vh;
+        width: 100%;
+        color: #fff;
+        font-size: 25px;
+
+        @include m-query(){
+            font-size: 40px;
+        }
+
+        .nav__list {
+            display: block;
+            margin-top: 100px;
+        }
     }
 }
 
+
+
 .menu {
+    transition: all 0.5s;
+
     cursor: pointer;
         background-color: transparent;
         border-color: transparent;
@@ -182,6 +237,7 @@ img {
     &__pic{
         fill:$color-main;
         width: f-rem(38);
+        transition: all 0.5s;
 
         @include m-query() {
             width: f-rem(44);
@@ -192,10 +248,30 @@ img {
         text-align: center;
         font-family:"Major Mono Display",serif;
         font-size: f-rem(12);
+        transition: all 0.5s;
 
         @include m-query() {
-                font-size: f-rem(14);
-            }
+            font-size: f-rem(14);
+        }
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+
+        .menu__pic{
+            opacity: 0.6;
+        }
+    }
+
+    &--active {
+        .menu__pic{
+            fill: $color-accent;
+            transform: rotate(360deg);
+        }
+
+        .menu__text{
+            color: #fff;
+        }
     }
 }
 

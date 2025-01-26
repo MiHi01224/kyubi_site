@@ -76,13 +76,11 @@ function catch_that_image()
 
 
 // Gutenberg用のCSSを読み込まない
-// //WordPressに含まれているjQueryを読み込まない
 
 function my_delete_plugin_files()
 {
     //IDを指定し解除
     wp_deregister_style('wp-block-library');
-    wp_deregister_script('jquery');
 }
 add_action('wp_enqueue_scripts', 'my_delete_plugin_files');
 

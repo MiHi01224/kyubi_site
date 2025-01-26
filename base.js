@@ -1,9 +1,14 @@
+const logo = document.getElementById('js-logo');
 const menu = document.getElementById('js-menu');
 const nav = document.getElementById('js-nav');
+const flower = document.getElementById('js-flower');
 
 /* ハンバーガーメニュー切り替え   */
 menu.addEventListener("click", () => {
-    nav.classList.toggle('nav--active');
+  logo.classList.toggle('header--active');
+  menu.classList.toggle('menu--active');
+  nav.classList.toggle('nav--active');
+  flower.classList.toggle('flower--active');
 });
 
 /* 右クリック禁止 */
