@@ -29,7 +29,7 @@ $cat = $cat[0];
                     <div class="single__page page">
                         <ul class="page__list">
                             <li class="page__item"><?php previous_post_link('%link', '←前の作品'); ?></li>
-                            <li class="page__item"><a href="<?php echo home_url('/'); ?>">一覧に戻る</a></li>
+                            <li class="page__item"><a href="<?php echo home_url('/post/'); ?>">一覧に戻る</a></li>
                             <li class="page__item"><?php next_post_link('%link', '次の作品→'); ?></li>
                         </ul>
                     </div>

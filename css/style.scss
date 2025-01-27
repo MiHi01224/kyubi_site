@@ -227,8 +227,19 @@ img {
         .nav__list {
             display: block;
             margin-top: 100px;
+            animation: FadeIn 0.7s ease 0s 1 normal;
         }
     }
+        @keyframes FadeIn {
+            0%,20%{
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
 }
 
 
@@ -452,13 +463,19 @@ img {
     &__list{
         @include m-flex(center,center);
         margin-right: auto;
+        margin:20px 0;
+        border-top: $color-text 1px solid;
+        padding-top: 10px;
     }
 
     &__item{
         margin:0 5px;
+        font-weight: bold;
+        transition: all 0.3s;
 
         &:hover {
             color: $color-main;
+            transform:translateY(-3px);
         }
     }
 
@@ -708,11 +725,18 @@ img {
                 aspect-ratio: 2/1;
             }
         }
+        // .show {
+        //     transform: translateY(0);
+        //     opacity: 1;
+        // }
     }
 
     &__item{
         margin-bottom: 10px;
         width: (593/1236)*100%;
+        // transform: translateY(20px);
+        // opacity: 0;
+        // transition: 0.5s;
 
         @include m-query(tablet){
             width: (387/1236)*100%;
@@ -721,8 +745,6 @@ img {
         @include m-query(desktop) {
             width: (290/1236)*100%;
         }
-
-
     }
 }
 
@@ -906,6 +928,21 @@ img {
 //   ##       ##  ##  ##   ##   ##        ##      ##  ##   ##   #
 //  ####     #### ##   #####   ####      ####    #######  #######
 
+
+.career{
+    &__inner {
+        @include m-inner();
+    }
+
+    &__title{
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    &__group{
+        padding-left: 20px;
+    }
+}
 
 
 /* work

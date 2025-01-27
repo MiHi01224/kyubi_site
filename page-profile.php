@@ -29,14 +29,14 @@
             <div class="career__content">
                 <div class="career__list">
                     <h3 class="career__item">2020年</h3>
-                    <div class="carrer__group">
+                    <div class="career__group">
                         <p class="career__info">5月 フロンティアワークス様とイラストレーター契約</p>
                         <p class="career__info">7月 トミーウォーカー様とイラストレーター契約</p>
                     </div>
                 </div>
                 <div class="career__list">
                     <h3 class="career__item">2021年</h3>
-                    <div class="carrer__group">
+                    <div class="career__group">
                         <p class="career__info">10月 pixiv公式コンテストモテモテ魔王のイラコン入賞</p>
                         <img class="career__pic" src="./image/illustration/career_pic1.png" alt="">
                         <p class="career__info">12月 pixivision戦うメイドさん特集掲載</p>

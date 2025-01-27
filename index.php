@@ -176,24 +176,24 @@
             <div class="about__scroll">
                 <ul class="about__list">
                     <li class="about__item">
-                        <a href="#"><img class="about__pic" src="<?php echo get_theme_file_uri('./image/illustration/cool1.jpg'); ?>" alt=""></a>
+                        <img class="about__pic" src="<?php echo get_theme_file_uri('./image/illustration/cool1.jpg'); ?>" alt="">
                     </li>
                     <li class="about__item">
-                        <a href="#"><img class="about__pic" src="<?php echo get_theme_file_uri('./image/illustration/Exquisite1.png'); ?>" alt=""></a>
+                        <img class="about__pic" src="<?php echo get_theme_file_uri('./image/illustration/Exquisite1.png'); ?>" alt="">
                     </li>
                     <li class="about__item">
-                        <a href="#"><img class="about__pic" src="<?php echo get_theme_file_uri('./image/illustration/Exquisite2.png'); ?>" alt=""></a>
+                        <img class="about__pic" src="<?php echo get_theme_file_uri('./image/illustration/Exquisite2.png'); ?>" alt="">
                     </li>
                 </ul>
                 <ul class="about__list">
                     <li class="about__item">
-                        <a href="#"><img class="about__pic" src="<?php echo get_theme_file_uri('./image/illustration/cool1.jpg'); ?>" alt=""></a>
+                        <img class="about__pic" src="<?php echo get_theme_file_uri('./image/illustration/cool1.jpg'); ?>" alt="">
                     </li>
                     <li class="about__item">
-                        <a href="#"><img class="about__pic" src="<?php echo get_theme_file_uri('./image/illustration/Exquisite1.png'); ?>" alt=""></a>
+                        <img class="about__pic" src="<?php echo get_theme_file_uri('./image/illustration/Exquisite1.png'); ?>" alt="">
                     </li>
                     <li class="about__item">
-                        <a href="#"><img class="about__pic" src="<?php echo get_theme_file_uri('./image/illustration/Exquisite2.png'); ?>" alt=""></a>
+                        <img class="about__pic" src="<?php echo get_theme_file_uri('./image/illustration/Exquisite2.png'); ?>" alt="">
                     </li>
                 </ul>
             </div>
