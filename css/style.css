@@ -88,11 +88,8 @@ img {
   transform: translateY(-3px);
   opacity: 0.6;
 }
-.header--active .cls-1 {
-  fill: #e8c7d3;
-}
-.header--active .cls-2 {
-  fill: #fff;
+.header .sns {
+  display: none;
 }
 
 .flower {
@@ -101,7 +98,7 @@ img {
   right: -25px;
   width: 100px;
   height: 100px;
-  background-color: #5E3449;
+  background-color: #fff;
   border-radius: 50%;
   transform: scale(0);
   transition: all 0.7s ease-in-out;
@@ -159,7 +156,6 @@ img {
   z-index: 10;
   height: 100vh;
   width: 100%;
-  color: #fff;
   font-size: 25px;
 }
 @media (769px <= width) {
@@ -193,6 +189,7 @@ img {
 }
 
 .menu {
+  text-align: center;
   transition: all 0.5s;
   cursor: pointer;
   background-color: transparent;
@@ -227,11 +224,8 @@ img {
   opacity: 0.6;
 }
 .menu--active .menu__pic {
-  fill: #e8c7d3;
+  fill: #5E3449;
   transform: rotate(360deg);
-}
-.menu--active .menu__text {
-  color: #fff;
 }
 
 /* footer */
@@ -867,11 +861,11 @@ img {
 /* work
 -------------------------------------*/
 .pagehead {
-  margin-top: 60px;
+  margin-top: 130px;
 }
 @media (769px <= width) {
   .pagehead {
-    margin-top: 100px;
+    margin-top: 170px;
   }
 }
 

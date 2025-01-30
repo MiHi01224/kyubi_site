@@ -20,7 +20,7 @@ function my_style_output()
     /* google-font */
     wp_enqueue_style(
         'google-font',
-        'https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=Major+Mono+Display&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap&text=menuプロフィール制作実績ご依頼についてお問い合わせ',
+        'https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=Major+Mono+Display&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap&text=menuclosプロフィール制作実績ご依頼についてお問い合わせ',
         array(),
         null
     );

@@ -19,7 +19,7 @@
 
     <header class="header">
         <div class="header__inner">
-            <h1 class="header__logo" id="js-logo">
+            <h1 class="header__logo">
                 <a href="<?php echo home_url('#'); ?>">
                     <svg id="_レイヤー_2" data-name="レイヤー_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 347 311.35">
                         <g id="_レイヤー_1-2" data-name="レイヤー_1">
@@ -139,9 +139,16 @@
                     <li class="nav__item"><a href="<?php echo home_url('/profile/'); ?>">プロフィール</a></li>
                     <li class="nav__item"><a href="<?php echo home_url('/post/'); ?>">制作実績</a></li>
                     <li class="nav__item"><a href="<?php echo home_url('/about/'); ?>">ご依頼について</a></li>
-                    <li class="nav__item"><a href="<?php echo home_url('/contact/'); ?>">お問い合わせ</a></li>
+                    <li class="nav__item nav__item--contact"><a href="<?php echo home_url('/contact/'); ?>">お問い合わせ</a></li>
                 </ul>
             </nav>
+            <div class="header__sns" id="js-sns">
+                <ul class="sns">
+                    <li class="sns__item"><a href="https://x.com/primarys2020" target=”_blank”><img class="sns__pic" src="<?php echo get_theme_file_uri('./image/iconX.svg'); ?>" alt="キュウビミカのエックスに移動"></a></li>
+                    <li class="sns__item"><a href="https://www.pixiv.net/users/3905543" target=”_blank”><img class="sns__pic" src="<?php echo get_theme_file_uri('./image/iconPixiv.png'); ?>" alt="キュウビミカのピクシブに移動"></a></li>
+                    <li class="sns__item"><a href="https://bsky.app/profile/primarys2020.bsky.social" target=”_blank”><img class="sns__pic" src="<?php echo get_theme_file_uri('./image/iconBluesky.png'); ?>" alt="キュウビミカのブルースカイに移動"></a></li>
+                </ul>
+            </div>
             <button class="header__menu menu" id="js-menu">
                 <svg class="menu__pic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53.29 51.34">
                     <path

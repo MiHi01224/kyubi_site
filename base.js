@@ -1,11 +1,12 @@
 /* ハンバーガーメニュー切り替え   */
-const logo = document.getElementById('js-logo');
 const menu = document.getElementById('js-menu');
+const sns = document.getElementById('js-sns');
 const nav = document.getElementById('js-nav');
 const flower = document.getElementById('js-flower');
+
 menu.addEventListener("click", () => {
-  logo.classList.toggle('header--active');
   menu.classList.toggle('menu--active');
+  sns.classList.toggle('sns--active');
   nav.classList.toggle('nav--active');
   flower.classList.toggle('flower--active');
 });
