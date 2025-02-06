@@ -26,6 +26,14 @@ document.querySelectorAll('img').forEach(img => {
   });
 });
 
+/*  */
+// 複製するHTML要素を取得
+let content_area = document.getElementById("content_area");
+let clone_element = content_area.cloneNode(true);
+clone_element.id = "content_area2";
+content_area.after(clone_element);
+
+
 //スクロール時のイベントを追加
 // window.addEventListener('scroll', function(){
 

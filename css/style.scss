@@ -820,6 +820,10 @@ img {
         margin-bottom: 20px;
         overflow: hidden;
         display: flex;
+
+        &:hover .about__list {
+            animation-play-state: paused;
+        }
     }
 
     &__list{
@@ -829,7 +833,7 @@ img {
 
     &__item{
         padding: 0 2px;
-        width: calc(100vw/3);
+        width: calc(100vw/5);
     }
 
     &__pic{
@@ -837,7 +841,9 @@ img {
         aspect-ratio: 3/4;
         object-fit: cover;
 
-        @include m-query(){
+        &:hover{
+            transform: translateY(-3px);
+                opacity: 0.6;
         }
     }
 }
@@ -1035,4 +1041,31 @@ input[type="url"] {
 .submit{
     text-align: center;
     width:100px;
+}
+
+/* 404-page
+-------------------------------------*/
+
+.page-404 {
+    margin-bottom: 100px;
+
+    &__inner {
+        @include m-inner();
+    }
+
+    &__title {
+        font-size: f-rem(30);
+        font-weight: bold;
+    }
+
+    &__post{
+        text-align: center;
+    }
+
+
+    &__pic img{
+        margin:20px 0;
+        width: 500px;
+        box-shadow: 7px 10px 5px #ccc;
+    }
 }
